@@ -41,7 +41,7 @@ var data = [
 	["V", "menus"],
 	["L", "Menu 1 : Titre", "Menu 2 : Titre", "Menu 3 : Titre"],
 	["M", "Menu 1 : Titre", "Description"],
-	["M", "Titre du menu", "Question ?"],
+	["M", "Titre du menu", "Question ?", "Description"],
 	["V", "addition"],
 	["A", "Titre de l'addition", "Proposition"],
 	["V", "burger-mort"],
@@ -112,6 +112,46 @@ function diapo(){
 		document.getElementById("reponseB").innerHTML = data[i][3];
 		document.getElementById("reponseC").innerHTML = data[i][4];
 		document.getElementById("reponseD").innerHTML = data[i][5];
+		document.getElementById("reponseA").style.color = "black";
+		document.getElementById("reponseB").style.color = "black";
+		document.getElementById("reponseC").style.color = "black";
+		document.getElementById("reponseD").style.color = "black";
+		document.getElementById("reponses").style.display = "block";
+	}else if(data[i][0] == "NA"){
+		document.getElementById("title").innerHTML = "NUGGETS";
+		document.getElementById("question").innerHTML = data[i][1];
+		document.getElementById("reponseA").innerHTML = data[i][2];
+		document.getElementById("reponseB").innerHTML = data[i][3];
+		document.getElementById("reponseC").innerHTML = data[i][4];
+		document.getElementById("reponseD").innerHTML = data[i][5];
+		document.getElementById("reponseA").style.color = "blue";
+		document.getElementById("reponses").style.display = "block";
+	} else if(data[i][0] == "NB"){
+		document.getElementById("title").innerHTML = "NUGGETS";
+		document.getElementById("question").innerHTML = data[i][1];
+		document.getElementById("reponseA").innerHTML = data[i][2];
+		document.getElementById("reponseB").innerHTML = data[i][3];
+		document.getElementById("reponseC").innerHTML = data[i][4];
+		document.getElementById("reponseD").innerHTML = data[i][5];
+		document.getElementById("reponseB").style.color = "blue";
+		document.getElementById("reponses").style.display = "block";
+	} else if(data[i][0] == "NC"){
+		document.getElementById("title").innerHTML = "NUGGETS";
+		document.getElementById("question").innerHTML = data[i][1];
+		document.getElementById("reponseA").innerHTML = data[i][2];
+		document.getElementById("reponseB").innerHTML = data[i][3];
+		document.getElementById("reponseC").innerHTML = data[i][4];
+		document.getElementById("reponseD").innerHTML = data[i][5];
+		document.getElementById("reponseC").style.color = "blue";
+		document.getElementById("reponses").style.display = "block";
+	} else if(data[i][0] == "ND"){
+		document.getElementById("title").innerHTML = "NUGGETS";
+		document.getElementById("question").innerHTML = data[i][1];
+		document.getElementById("reponseA").innerHTML = data[i][2];
+		document.getElementById("reponseB").innerHTML = data[i][3];
+		document.getElementById("reponseC").innerHTML = data[i][4];
+		document.getElementById("reponseD").innerHTML = data[i][5];
+		document.getElementById("reponseD").style.color = "blue";
 		document.getElementById("reponses").style.display = "block";
 	} else if(data[i][0] == "S"){
 		document.getElementById("title").innerHTML = "SEL OU POIVRE";
@@ -126,7 +166,7 @@ function diapo(){
 	} else if(data[i][0] == "M"){
 		document.getElementById("title").innerHTML = "MENUS";
 		document.getElementById("question").innerHTML = data[i][1];
-		document.getElementById("reponse").innerHTML = data[i][2];
+		document.getElementById("reponse").innerHTML = data[i][2] + "<br><br>" + "<span style='color: blue;'>" + data[i][3] + "</span>";
 		document.getElementById("reponse").style.display = "block";
 	} else if(data[i][0] == "A"){
 		document.getElementById("title").innerHTML = "ADDITION";
