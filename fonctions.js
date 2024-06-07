@@ -6,8 +6,22 @@ var data = [];
 
 init();
 
-function init(){
-	document.getElementById('fileInput').src = "exemples/evjf.csv"
+function init() {
+    // Charger le fichier CSV par défaut
+    loadDefaultCSV();
+    // Ajouter l'événement pour le chargement de fichier via l'input
+    document.getElementById('fileInput').addEventListener('change', handleFileSelect, false);
+}
+
+function loadDefaultCSV() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'exemples/evjf.csv', true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            handleCSVData(xhr.responseText);
+        }
+    };
+    xhr.send();
 }
 
 function handleFileSelect(event){
