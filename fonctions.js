@@ -7,7 +7,7 @@ var data = [];
 init();
 
 function init(){
-	document.getElementById('/exemple/evjf.csv')
+	document.getElementById('fileInput').src = "exemples/evjf.csv"
 }
 
 function handleFileSelect(event){
